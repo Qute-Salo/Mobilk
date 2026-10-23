@@ -1,0 +1,553 @@
+/* ==========================================================================
+   1. СБРОС СТИЛЕЙ (CSS Reset)
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* База: 1rem = 16px */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. БАЗОВЫЕ СТИЛИ ДЛЯ СМАРТФОНОВ (Ширина до 480px по умолчанию)
+   ========================================================================== */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Шапка сайта */
+.header {
+    background: #fff;
+    box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.05);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff4757;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav a.active {
+    color: #ff4757;
+}
+
+.cart-link {
+    background: #ffe1e3;
+    color: #ff4757 !important;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+}
+
+/* Промо-баннер (Hero) */
+.hero {
+    background: #f1f2f6;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column; /* В мобилке всё в один столбик */
+    gap: 1.5rem;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+    color: #ff4757;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff4757;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Сетка ресторанов */
+.restaurants {
+    padding: 2rem 0;
+    flex: 1;
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Flexbox-сетка: по умолчанию карточки занимают 100% ширины */
+.restaurants-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.restaurant-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 0.25rem 0.93rem rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.rating { color: #ffa502; font-weight: 700; }
+.time { color: #747d8c; }
+
+/* Подвал */
+.footer {
+    background: #2f3542;
+    color: #a4b0be;
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.footer-links a {
+    color: #a4b0be;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   3. МЕДИА-ЗАПРОСЫ (Медиаbreakpoints для десктопов и планшетов)
+   ========================================================================== */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px; /* Можно увеличить базу для больших экранов */
+    }
+
+    .hero-container {
+        flex-direction: row; /* На десктопе выстраиваем в ряд */
+        text-align: left;
+        align-items: center;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+
+    /* Перестраиваем Flexbox в многоколоночную строку */
+    .restaurants-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .restaurant-card {
+        width: calc(50% - 0.75rem); /* Две карточки в ряд с учетом gap */
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-card {
+        width: calc(33.333% - 1rem); /* Три карточки в ряд на больших мониторах */
+    }
+    
+    .nav a {
+        margin-left: 1.5rem;
+        font-size: 1rem;
+    }
+}
+/* ==========================================================================
+   4. СТРАНИЦА МЕНЮ (menu.html) — Mobile First базовые стили
+   ========================================================================== */
+.restaurant-hero {
+    background: #fff;
+    padding: 1.5rem 0;
+    border-bottom: 0.0625rem solid #eee;
+}
+
+.restaurant-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.restaurant-meta-flex {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку на узких экранах */
+    gap: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.delivery {
+    color: #2ed573;
+    font-weight: 600;
+}
+
+/* Сетка меню для мобильных: карточки идут одна под другой */
+.menu-section {
+    padding: 2rem 0;
+}
+
+.menu-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Карточка товара */
+.product-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.93rem rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column; /* На мобилках картинка сверху, текст снизу */
+}
+
+.product-image img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Позволяет контенту распределяться равномерно */
+}
+
+.product-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #747d8c;
+    margin-bottom: 1.2rem;
+    flex: 1; /* Выталкивает цену и кнопку к самому низу карточки */
+}
+
+.product-footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2f3542;
+}
+
+.btn-add-to-cart {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add-to-cart:hover {
+    background: #ff6b81;
+}
+
+/* ==========================================================================
+   МЕДИА-ЗАПРОСЫ для menu.html (Десктоп)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .restaurant-hero {
+        padding: 2.5rem 0;
+    }
+
+    .restaurant-title {
+        font-size: 2.5rem;
+    }
+
+    /* На планшетах и десктопах выстраиваем карточки горизонтально */
+    .menu-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* По 2 карточки в ряд на средних экранах */
+    .product-card {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    /* По 3 карточки в ряд на больших мониторах */
+    .product-card {
+        width: calc(33.333% - 1rem);
+    }
+}
+/* ==========================================================================
+   5. СТРАНИЦА ОФОРМЛЕНИЯ ЗАКАЗА (checkout.html) — Mobile First
+   ========================================================================== */
+.checkout-main {
+    padding: 2rem 0;
+    flex: 1;
+}
+
+/* В мобильной версии форма и корзина идут друг под другом */
+.checkout-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.checkout-form-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.93rem rgba(0,0,0,0.03);
+}
+
+.form-group-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.8rem 0;
+    color: #2f3542;
+}
+.form-group-title:first-child {
+    margin-top: 0;
+}
+
+.form-grid-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 0.0625rem solid #ced6e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    background: #f1f2f6;
+}
+.form-input:focus {
+    border-color: #ff4757;
+    background: white;
+}
+
+/* Подсетка для Дома/Квартиры/Подъезда на базе Flexbox */
+.address-subgrid {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.payment-methods-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit-order {
+    width: 100%;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Стили правой колонки (Корзины) */
+.checkout-cart-aside {
+    width: 100%;
+}
+
+.cart-summary-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.93rem rgba(0,0,0,0.03);
+    position: sticky;
+    top: 5rem;
+}
+
+.cart-items-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.cart-item-flex {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.item-name {
+    flex: 1;
+    padding-right: 0.5rem;
+}
+.item-count {
+    color: #747d8c;
+    margin-right: 1rem;
+}
+.item-price {
+    font-weight: 600;
+}
+
+.divider {
+    border: 0;
+    height: 0.0625rem;
+    background: #eee;
+    margin: 1.2rem 0;
+}
+
+.totals-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.total-row-flex {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.delivery-free {
+    color: #2ed573;
+    font-weight: 600;
+}
+
+.final-price-row {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff4757;
+}
+
+/* ==========================================================================
+   МЕДИА-ЗАПРОСЫ для checkout.html (Десктоп)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* Перестраиваем в двухколоночный макет */
+    .checkout-flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .checkout-form-section {
+        flex: 1.5; /* Форма шире */
+    }
+
+    .checkout-cart-aside {
+        flex: 1; /* Корзина уже */
+    }
+
+    .form-grid-mobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .form-input {
+        width: calc(50% - 0.4rem); /* Поля встают по два в ряд */
+    }
+
+    .street-input {
+        width: 100%; /* Улица на всю ширину */
+    }
+
+    .payment-methods-flex {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}

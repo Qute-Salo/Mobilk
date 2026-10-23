@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Craving — Доставка еды</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Craving</a>
+            <nav class="nav">
+                <a href="index.html" class="active">Главная</a>
+                <a href="menu.html">Menu</a>
+                <a href="checkout.html" class="cart-link">
+                    <i class="fa-solid fa-basket-shopping"></i> <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1>Любимая еда <br><span>до вашей двери</span></h1>
+                    <p>Быстро, горячо и вкусно. Выбирайте среди лучших ресторанов города.</p>
+                    <a href="menu.html" class="btn">Выбрать блюдо</a>
+                </div>
+                <div class="hero-image">
+                    <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                    <img src="assets/images/hero.jpg" alt="Вкусная еда">
+                </div>
+            </div>
+        </section>
+
+        <section class="restaurants">
+            <div class="container">
+                <h2 class="section-title">Популярные рестораны</h2>
+                <div class="restaurants-flex">
+                    
+                    <a href="menu.html" class="restaurant-card">
+                        <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                        <img src="assets/images/pizza.jpg" alt="Пицца">
+                        <div class="card-info">
+                            <h3>Burger House</h3>
+                            <div class="card-meta">
+                                <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                                <span class="time"><i class="fa-solid fa-clock"></i> 25 мин</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="menu.html" class="restaurant-card">
+                        <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                        <img src="assets/images/sushi.jpg" alt="Суши">
+                        <div class="card-info">
+                            <h3>Суши Мастер</h3>
+                            <div class="card-meta">
+                                <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                                <span class="time"><i class="fa-solid fa-clock"></i> 40 мин</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Craving.</p>
+            <div class="footer-links">
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Оформление заказа — Craving</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Craving</a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="menu.html">Меню</a>
+                <a href="checkout.html" class="active">Корзина</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="checkout-main">
+        <div class="container">
+            <h1 class="section-title">Оформление заказа</h1>
+            
+            <div class="checkout-flex">
+                
+                <section class="checkout-form-section">
+                    <form action="#" method="POST" class="delivery-form">
+                        
+                        <div class="form-group-title">1. Личные данные</div>
+                        <div class="form-grid-mobile">
+                            <input type="text" placeholder="Ваше имя" required class="form-input">
+                            <input type="tel" placeholder="Номер телефона" required class="form-input">
+                        </div>
+
+                        <div class="form-group-title">2. Адрес доставки</div>
+                        <div class="form-grid-mobile">
+                            <input type="text" placeholder="Улица" required class="form-input street-input">
+                            <div class="address-subgrid">
+                                <input type="text" placeholder="Дом" required class="form-input">
+                                <input type="text" placeholder="Кв/Офис" class="form-input">
+                                <input type="text" placeholder="Подъезд" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group-title">3. Способ оплаты</div>
+                        <div class="payment-methods-flex">
+                            <label class="radio-label">
+                                <input type="radio" name="payment" checked>
+                                <span>Картой в приложении</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment">
+                                <span>Наличными курьеру</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit-order">Подтвердить заказ</button>
+                    </form>
+                </section>
+
+                <aside class="checkout-cart-aside">
+                    <div class="cart-summary-card">
+                        <h3>Ваш заказ</h3>
+                        
+                        <div class="cart-items-list" id="cart-items-container">
+                            <!-- JS сгенерирует товары здесь автоматически -->
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="totals-flex">
+                            <div class="total-row-flex">
+                                <span>Блюда:</span>
+                                <span id="items-subtotal">0 ₽</span>
+                            </div>
+                            <div class="total-row-flex">
+                                <span>Доставка:</span>
+                                <span class="delivery-free">Бесплатно</span>
+                            </div>
+                            <hr class="divider">
+                            <div class="total-row-flex final-price-row">
+                                <span>Итого к оплате:</span>
+                                <span id="final-total-price">0 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Craving.</p>
+            <div class="footer-links">
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

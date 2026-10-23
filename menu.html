@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Меню Burger House — Craving</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Craving</a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="menu.html" class="active">Меню</a>
+                <a href="checkout.html" class="cart-link">
+                    <i class="fa-solid fa-basket-shopping"></i> <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="restaurant-hero">
+            <div class="container">
+                <h1 class="restaurant-title">Burger House</h1>
+                <div class="restaurant-meta-flex">
+                    <span class="meta-item rating"><i class="fa-solid fa-star"></i> 4.8 (500+ оценок)</span>
+                    <span class="meta-item time"><i class="fa-solid fa-clock"></i> 25-35 мин</span>
+                    <span class="meta-item delivery"><i class="fa-solid fa-truck"></i> Доставка от 0 ₽</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Популярные блюда</h2>
+                <div class="menu-flex">
+                    
+                    <article class="product-card">
+                        <div class="product-image">
+                            <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                            <img src="assets/images/burger.jpg" alt="Классический Бургер">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Классический Бургер</h3>
+                            <p class="product-description">Сочная котлета из мраморной говядины, маринованные огурчики, сыр чеддер и фирменный соус.</p>
+                            <div class="product-footer-flex">
+                                <span class="product-price">350 ₽</span>
+                                <button class="btn-add-to-cart">В корзину</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                            <img src="assets/images/fries.jpg" alt="Картофель Фри">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Картофель Фри XL</h3>
+                            <p class="product-description">Хрустящий картофель фри с золотистой корочкой. Соль и специи по вкусу.</p>
+                            <div class="product-footer-flex">
+                                <span class="product-price">150 ₽</span>
+                                <button class="btn-add-to-cart">В корзину</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <!-- ЛОКАЛЬНОЕ ИЗОБРАЖЕНИЕ -->
+                            <img src="assets/images/pizza.jpg" alt="Пицца Пепперони">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Пицца Пепперони</h3>
+                            <p class="product-description">Пикантные колбаски пепперони, много моцареллы и фирменный томатный соус на тонком тесте.</p>
+                            <div class="product-footer-flex">
+                                <span class="product-price">590 ₽</span>
+                                <button class="btn-add-to-cart">В корзину</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Craving.</p>
+            <div class="footer-links">
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
